@@ -5,6 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D381158E-4BBA-468C-9018-B5FE59D766A6}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Jpp.Ironstone.DocumentManagement</RootNamespace>
@@ -86,25 +87,30 @@
       <HintPath>packages\AutoCAD.NET.23.0.0\lib\net47\AdWindows.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AutoUpdate, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\AutoUpdate.1.0.13\lib\net47\AutoUpdate.dll</HintPath>
+    <Reference Include="AutoUpdate, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AutoUpdate.1.0.15\lib\net47\AutoUpdate.dll</HintPath>
     </Reference>
     <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Common.0.1.4\lib\netstandard2.0\Common.dll</HintPath>
     </Reference>
-    <Reference Include="IronstoneCore, Version=0.1.90.127, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Jpp.Ironstone.Core.0.1.90\lib\net472\IronstoneCore.dll</HintPath>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
-    <Reference Include="IronstoneCoreUI, Version=0.1.90.127, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\Jpp.Ironstone.Core.UI.0.1.90\lib\net472\IronstoneCoreUI.dll</HintPath>
-    </Reference>
-    <Reference Include="IronstoneDocumentManagementObjectModel, Version=0.1.35.114, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="IronstoneCore, Version=0.1.95.140, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.Core.0.1.95\lib\net472\IronstoneCore.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Jpp.Ironstone.DocumentManagement.ObjectModel.0.1.35\lib\net472\IronstoneDocumentManagementObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="IronstoneCoreUI, Version=0.1.95.140, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.Core.UI.0.1.95\lib\net472\IronstoneCoreUI.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="IronstoneDocumentManagementObjectModel, Version=0.1.40.128, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.DocumentManagement.ObjectModel.0.1.40\lib\net472\IronstoneDocumentManagementObjectModel.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="jHub, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\jHub.0.1.1\lib\netstandard2.0\jHub.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ApplicationInsights.2.9.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
@@ -112,50 +118,60 @@
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.6.0\lib\net45\NLog.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Unity.Abstractions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>packages\Unity.5.9.7\lib\net47\Unity.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Container, Version=5.9.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>packages\Unity.5.9.7\lib\net47\Unity.Container.dll</HintPath>
+    <Reference Include="Unity.Abstractions, Version=4.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.Abstractions.4.1.2\lib\net47\Unity.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="ZipExtract, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\AutoUpdate.1.0.13\lib\net47\ZipExtract.dll</HintPath>
+    <Reference Include="ZipExtract, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AutoUpdate.1.0.15\lib\net47\ZipExtract.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentManagementExtensionApplication.cs" />
+    <Compile Include="ImportDrawingCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\DocumentTypeSelectorViewModel.cs" />
+    <Compile Include="Views\DocumentTypeSelectorView.xaml.cs">
+      <DependentUpon>DocumentTypeSelectorView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -170,6 +186,12 @@
     <None Include="Resources\Revise-Small.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IronstoneConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\DocumentType.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Page Include="AutocadStyleResourceDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -178,7 +200,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\DocumentTypeSelectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Jpp.Common.Tooling.Signing.0.2.0\build\Jpp.Common.Tooling.Signing.targets" Condition="Exists('packages\Jpp.Common.Tooling.Signing.0.2.0\build\Jpp.Common.Tooling.Signing.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

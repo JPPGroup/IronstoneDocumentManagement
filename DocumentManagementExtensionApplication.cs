@@ -39,11 +39,24 @@ namespace Jpp.Ironstone.DocumentManagement
 
             RibbonRowPanel column1 = new RibbonRowPanel();
             column1.IsTopJustified = true;
-            RibbonButton revision = UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_RevisionButton,
+            RibbonButton addRevision = UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_RevisionButton,
                 Properties.Resources.Revise_Small, RibbonItemSize.Standard, String.Empty);
-            revision.IsEnabled = false;
-            column1.Items.Add(revision);
-            column1.Items.Add(new RibbonRowBreak());;
+
+            RibbonButton finaliseRevisions = UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_FinaliseRevisionButton,
+                Properties.Resources.Revise_Small, RibbonItemSize.Standard, String.Empty);
+
+            RibbonSplitButton revisionSplitButton = new RibbonSplitButton();
+            /*revisionSplitButton.Text = "RibbonSplit";*/
+            revisionSplitButton.ShowText = true;
+            revisionSplitButton.Items.Add(addRevision);
+            revisionSplitButton.Items.Add(finaliseRevisions);
+            //TODO: Enable once the backing code is in place
+            revisionSplitButton.IsEnabled = false;
+
+            column1.Items.Add(revisionSplitButton);
+            column1.Items.Add(new RibbonRowBreak());
+            column1.Items.Add(UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_ImportDrawing,
+                Properties.Resources.DocumentType, RibbonItemSize.Standard, "DM_ImportDrawing"));
 
             //Build the UI hierarchy
             source.Items.Add(column1);

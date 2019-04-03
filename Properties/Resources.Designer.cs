@@ -61,6 +61,34 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DocumentType {
+            get {
+                object obj = ResourceManager.GetObject("DocumentType", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finalise Revision.
+        /// </summary>
+        internal static string ExtensionApplication_UI_FinaliseRevisionButton {
+            get {
+                return ResourceManager.GetString("ExtensionApplication_UI_FinaliseRevisionButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Drawing.
+        /// </summary>
+        internal static string ExtensionApplication_UI_ImportDrawing {
+            get {
+                return ResourceManager.GetString("ExtensionApplication_UI_ImportDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Document Management.
         /// </summary>
         internal static string ExtensionApplication_UI_PanelTitle {
