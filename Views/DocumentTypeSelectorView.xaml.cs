@@ -23,7 +23,7 @@ namespace Jpp.Ironstone.DocumentManagement.Views
         public DocumentTypeSelectorView()
         {
             InitializeComponent();
-            this.DataContext = new DocumentTypeSelectorViewModel();
+            this.DataContext = new DocumentTypeSelectorViewModel(this);
         }
     }
 }

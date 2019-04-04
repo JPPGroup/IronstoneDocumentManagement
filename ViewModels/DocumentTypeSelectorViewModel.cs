@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Autodesk.AutoCAD;
+using Autodesk.AutoCAD.Windows;
+using Jpp.Common;
+using Window = System.Windows.Window;
 
 namespace Jpp.Ironstone.DocumentManagement.ViewModels
 {
@@ -14,11 +17,12 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
         public List<string> DrawingTypes { get; set; }
         public string SelectedType { get; set; }
 
-        public DocumentTypeSelectorViewModel()
+        //TODO: Remove window dependency
+        public DocumentTypeSelectorViewModel(Window w)
         {
             DrawingTypes = new List<string>();
             DrawingTypes.Add("Civil Xref");
-            /*OkCommand = new DelegateCommand(() =>
+            OkCommand = new DelegateCommand(() =>
             {
                 switch (SelectedType)
                 {
@@ -26,8 +30,9 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
                         int i = 1;
                         break;
                 }
-            });*/
-        }
 
+                w.Close();
+            });
+        }
     }
 }

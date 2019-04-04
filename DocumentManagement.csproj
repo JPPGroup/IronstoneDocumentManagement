@@ -91,21 +91,21 @@
       <HintPath>packages\AutoUpdate.1.0.15\lib\net47\AutoUpdate.dll</HintPath>
     </Reference>
     <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Common.0.1.4\lib\netstandard2.0\Common.dll</HintPath>
+      <HintPath>packages\Common.0.1.5\lib\netstandard2.0\Common.dll</HintPath>
     </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
-    <Reference Include="IronstoneCore, Version=0.1.95.140, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\Jpp.Ironstone.Core.0.1.95\lib\net472\IronstoneCore.dll</HintPath>
+    <Reference Include="IronstoneCore, Version=0.1.96.141, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.Core.0.1.96\lib\net472\IronstoneCore.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="IronstoneCoreUI, Version=0.1.95.140, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\Jpp.Ironstone.Core.UI.0.1.95\lib\net472\IronstoneCoreUI.dll</HintPath>
+    <Reference Include="IronstoneCoreUI, Version=0.1.96.141, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.Core.UI.0.1.96\lib\net472\IronstoneCoreUI.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="IronstoneDocumentManagementObjectModel, Version=0.1.40.128, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\Jpp.Ironstone.DocumentManagement.ObjectModel.0.1.40\lib\net472\IronstoneDocumentManagementObjectModel.dll</HintPath>
+    <Reference Include="IronstoneDocumentManagementObjectModel, Version=0.1.41.129, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.DocumentManagement.ObjectModel.0.1.41\lib\net472\IronstoneDocumentManagementObjectModel.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="jHub, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -148,8 +148,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Unity.Abstractions, Version=4.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>packages\Unity.Abstractions.4.1.2\lib\net47\Unity.Abstractions.dll</HintPath>
+    <Reference Include="Unity.Abstractions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.5.9.7\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.9.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.5.9.7\lib\net47\Unity.Container.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="ZipExtract, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
@@ -186,9 +189,6 @@
     <None Include="Resources\Revise-Small.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IronstoneConfig.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\DocumentType.png" />
   </ItemGroup>
   <ItemGroup>
@@ -205,7 +205,17 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="IronstoneConfigRelease.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IronstoneConfigBeta.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IronstoneConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Jpp.Common.Tooling.Signing.0.2.0\build\Jpp.Common.Tooling.Signing.targets" Condition="Exists('packages\Jpp.Common.Tooling.Signing.0.2.0\build\Jpp.Common.Tooling.Signing.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
