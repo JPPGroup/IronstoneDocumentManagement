@@ -98,16 +98,16 @@
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
-    <Reference Include="IronstoneCore, Version=0.1.100.153, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\Jpp.Ironstone.Core.0.1.100\lib\net472\IronstoneCore.dll</HintPath>
+    <Reference Include="IronstoneCore, Version=0.1.101.6, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.Core.0.1.101-devd\lib\net472\IronstoneCore.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="IronstoneCoreUI, Version=0.1.100.153, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\Jpp.Ironstone.Core.UI.0.1.100\lib\net472\IronstoneCoreUI.dll</HintPath>
+    <Reference Include="IronstoneCoreUI, Version=0.1.101.6, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.Core.UI.0.1.101-devd\lib\net472\IronstoneCoreUI.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="IronstoneDocumentManagementObjectModel, Version=0.1.45.139, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\Jpp.Ironstone.DocumentManagement.ObjectModel.0.1.45\lib\net472\IronstoneDocumentManagementObjectModel.dll</HintPath>
+    <Reference Include="IronstoneDocumentManagementObjectModel, Version=0.1.46.2, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\Jpp.Ironstone.DocumentManagement.ObjectModel.0.1.46-devc\lib\net472\IronstoneDocumentManagementObjectModel.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="jHub, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
