@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autodesk.AutoCAD.Runtime;
 using Autodesk.Windows;
 using Jpp.Ironstone.Core;
 using Jpp.Ironstone.Core.UI;
-using Unity;
+using Jpp.Ironstone.DocumentManagement.Properties;
+using Jpp.Ironstone.DocumentManagement.ViewModels;
+using Jpp.Ironstone.DocumentManagement.Views;
+using Microsoft.Extensions.DependencyInjection;
 
 [assembly: ExtensionApplication(typeof(Jpp.Ironstone.DocumentManagement.DocumentManagementExtensionApplication))]
 
@@ -15,6 +14,8 @@ namespace Jpp.Ironstone.DocumentManagement
 {
     class DocumentManagementExtensionApplication : IIronstoneExtensionApplication
     {
+        private IServiceProvider _container;
+
         public void Initialize()
         {
             CoreExtensionApplication._current.RegisterExtension(this);
@@ -24,14 +25,21 @@ namespace Jpp.Ironstone.DocumentManagement
         {
         }
 
-        public void InjectContainer(IUnityContainer container)
+        public void RegisterServices(IServiceCollection container)
         {
+            container.AddTransient<ProjectManager>();
+            container.AddTransient<ProjectManagerViewModel>();
+        }
+
+        public void InjectContainer(IServiceProvider provider)
+        {
+            _container = provider;
         }
 
         public void CreateUI()
         {
             RibbonControl rc = Autodesk.Windows.ComponentManager.Ribbon;
-            RibbonTab primaryTab = rc.FindTab(Jpp.Ironstone.Core.Constants.IRONSTONE_TAB_ID);
+            RibbonTab primaryTab = rc.FindTab(Jpp.Ironstone.Core.Constants.IronstoneGeneralTabId);
 
             RibbonPanel Panel = new RibbonPanel();
             RibbonPanelSource source = new RibbonPanelSource();
@@ -57,9 +65,13 @@ namespace Jpp.Ironstone.DocumentManagement
             column1.Items.Add(new RibbonRowBreak());
             column1.Items.Add(UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_ImportDrawing,
                 Properties.Resources.DocumentType, RibbonItemSize.Standard, "DM_ImportDrawing"));
+            
+            RibbonToggleButton projectButton = UIHelper.CreateWindowToggle(Resources.ExtensionApplication_UI_ProjectManagementToggleButton, Resources.File, RibbonItemSize.Large, _container.GetRequiredService<ProjectManager>(), "e11bf768-89ed-42b7-a68f-166d1b4b60e8");
 
             //Build the UI hierarchy
+            source.Items.Add(projectButton);
             source.Items.Add(column1);
+            
 
             Panel.Source = source;
 

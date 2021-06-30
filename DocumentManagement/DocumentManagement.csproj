@@ -8,7 +8,7 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   
-  <Import Project="IronstoneBase\IronstoneObjectModelBaseUiProject.csproj" />
+  <Import Project="..\IronstoneBase\IronstoneObjectModelBaseUiProject.csproj" />
   
   <ItemGroup>
     <Reference Include="PresentationFramework" />

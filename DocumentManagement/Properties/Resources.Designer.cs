@@ -19,10 +19,10 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Jpp.Ironstone.DocumentManagement.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DocumentType {
+        public static System.Drawing.Bitmap DocumentType {
             get {
                 object obj = ResourceManager.GetObject("DocumentType", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Finalise Revision.
         /// </summary>
-        internal static string ExtensionApplication_UI_FinaliseRevisionButton {
+        public static string ExtensionApplication_UI_FinaliseRevisionButton {
             get {
                 return ResourceManager.GetString("ExtensionApplication_UI_FinaliseRevisionButton", resourceCulture);
             }
@@ -82,7 +82,7 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Import Drawing.
         /// </summary>
-        internal static string ExtensionApplication_UI_ImportDrawing {
+        public static string ExtensionApplication_UI_ImportDrawing {
             get {
                 return ResourceManager.GetString("ExtensionApplication_UI_ImportDrawing", resourceCulture);
             }
@@ -91,16 +91,25 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Document Management.
         /// </summary>
-        internal static string ExtensionApplication_UI_PanelTitle {
+        public static string ExtensionApplication_UI_PanelTitle {
             get {
                 return ResourceManager.GetString("ExtensionApplication_UI_PanelTitle", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Revision Manager.
+        /// </summary>
+        public static string ExtensionApplication_UI_ProjectManagementToggleButton {
+            get {
+                return ResourceManager.GetString("ExtensionApplication_UI_ProjectManagementToggleButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Revision.
         /// </summary>
-        internal static string ExtensionApplication_UI_RevisionButton {
+        public static string ExtensionApplication_UI_RevisionButton {
             get {
                 return ResourceManager.GetString("ExtensionApplication_UI_RevisionButton", resourceCulture);
             }
@@ -109,7 +118,17 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Revise_Small {
+        public static System.Drawing.Bitmap File {
+            get {
+                object obj = ResourceManager.GetObject("File", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Revise_Small {
             get {
                 object obj = ResourceManager.GetObject("Revise_Small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

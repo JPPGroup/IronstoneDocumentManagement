@@ -1,2 +1,0 @@
-Get-ChildItem -Include *IronstoneDocumentManagement.dll -Exclude *Tests.dll -Recurse | Compress-Archive -Update -DestinationPath ($PSScriptRoot + "\IronstoneDocumentManagement")
-Write-Host "Zip file created"
