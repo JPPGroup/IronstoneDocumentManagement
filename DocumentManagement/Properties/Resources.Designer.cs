@@ -63,10 +63,29 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap AddNewSheet_Small {
+            get {
+                object obj = ResourceManager.GetObject("AddNewSheet_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap DocumentType {
             get {
                 object obj = ResourceManager.GetObject("DocumentType", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Sheet.
+        /// </summary>
+        public static string ExtensionApplication_UI_AddSheetButton {
+            get {
+                return ResourceManager.GetString("ExtensionApplication_UI_AddSheetButton", resourceCulture);
             }
         }
         

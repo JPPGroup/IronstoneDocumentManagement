@@ -9,10 +9,18 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <GroupBox Margin="10" Header="Project Settings" VerticalAlignment="Top">
-            <StackPanel>
-                <Label>Project Name</Label>
-                <TextBox Text="{Binding Project}"/>
-            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Project Name</Label>
+                <TextBox Text="{Binding ProjectName}" Grid.Column="1"/>
+                <Label Grid.Column="0">Project Number</Label>
+                <TextBox Text="{Binding ProjectNumber}" Grid.Column="1"/>
+                <Label Grid.Column="0">Client</Label>
+                <TextBox Text="{Binding Client}" Grid.Column="1"/>
+            </Grid>
         </GroupBox>
     </StackPanel>
 </ui:HostedUserControl>

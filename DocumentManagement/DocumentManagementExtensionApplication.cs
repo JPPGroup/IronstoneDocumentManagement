@@ -14,8 +14,8 @@ namespace Jpp.Ironstone.DocumentManagement
 {
     class DocumentManagementExtensionApplication : IIronstoneExtensionApplication
     {
-        private IServiceProvider _container;
-
+        internal static IServiceProvider _container;
+        
         public void Initialize()
         {
             CoreExtensionApplication._current.RegisterExtension(this);
@@ -29,6 +29,8 @@ namespace Jpp.Ironstone.DocumentManagement
         {
             container.AddTransient<ProjectManager>();
             container.AddTransient<ProjectManagerViewModel>();
+
+            //TODO: Consider caching controllers for performance?
         }
 
         public void InjectContainer(IServiceProvider provider)
@@ -47,6 +49,10 @@ namespace Jpp.Ironstone.DocumentManagement
 
             RibbonRowPanel column1 = new RibbonRowPanel();
             column1.IsTopJustified = true;
+
+            RibbonButton addSheet = UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_AddSheetButton,
+                Properties.Resources.AddNewSheet_Small, RibbonItemSize.Standard, UIHelper.GetCommandGlobalName(typeof(ProjectCommands), nameof(ProjectCommands.AddSheet)));
+
             RibbonButton addRevision = UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_RevisionButton,
                 Properties.Resources.Revise_Small, RibbonItemSize.Standard, String.Empty);
 
@@ -61,6 +67,7 @@ namespace Jpp.Ironstone.DocumentManagement
             //TODO: Enable once the backing code is in place
             revisionSplitButton.IsEnabled = false;
 
+            column1.Items.Add(addSheet);
             column1.Items.Add(revisionSplitButton);
             column1.Items.Add(new RibbonRowBreak());
             column1.Items.Add(UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_ImportDrawing,

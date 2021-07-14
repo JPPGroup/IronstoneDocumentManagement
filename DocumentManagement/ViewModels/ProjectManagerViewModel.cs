@@ -8,9 +8,9 @@ using Path = System.IO.Path;
 
 namespace Jpp.Ironstone.DocumentManagement.ViewModels
 {
-    class ProjectManagerViewModel
+    public class ProjectManagerViewModel
     {
-        public string Project {
+        public string ProjectName {
             get
             {
                 return _projectController.ProjectName;
@@ -21,16 +21,42 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
             }
         }
 
+        public string ProjectNumber
+        {
+            get
+            {
+                return _projectController.ProjectNumber;
+            }
+            set
+            {
+                _projectController.ProjectNumber = value;
+            }
+        }
+
+        public string Client
+        {
+            get
+            {
+                return _projectController.Client;
+            }
+            set
+            {
+                _projectController.Client = value;
+            }
+        }
+
         private ProjectController _projectController;
         private LayoutSheetController _layoutController;
 
         public ProjectManagerViewModel(IServiceProvider container, IConfiguration settings, ILogger<CoreExtensionApplication> logger)
         {
             Document doc = Application.DocumentManager.MdiActiveDocument;
-            string workDirectoryName = Path.GetDirectoryName(doc.Database.Filename);
-
-            _projectController = new ProjectController(container, workDirectoryName);
-            _layoutController = new LayoutSheetController(logger, doc, settings);
+            if (doc.IsNamedDrawing)
+            {
+                string workDirectoryName = Path.GetDirectoryName(doc.Database.Filename);
+                //TODO: Consider caching controllers for performance?
+                _projectController = new ProjectController(container, logger, settings, workDirectoryName);
+            }
         }
     }
 }
