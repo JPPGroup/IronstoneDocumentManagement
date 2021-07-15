@@ -14,13 +14,28 @@
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0">Project Name</Label>
-                <TextBox Text="{Binding ProjectName}" Grid.Column="1"/>
-                <Label Grid.Column="0">Project Number</Label>
-                <TextBox Text="{Binding ProjectNumber}" Grid.Column="1"/>
-                <Label Grid.Column="0">Client</Label>
-                <TextBox Text="{Binding Client}" Grid.Column="1"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0">Project Name</Label>
+                <TextBox Text="{Binding ProjectName}" Grid.Column="1" Grid.Row="0"/>
+                <Label Grid.Column="0" Grid.Row="1">Project Number</Label>
+                <TextBox Text="{Binding ProjectNumber}" Grid.Column="1" Grid.Row="1"/>
+                <Label Grid.Column="0" Grid.Row="2">Client</Label>
+                <TextBox Text="{Binding Client}" Grid.Column="1" Grid.Row="2"/>
             </Grid>
         </GroupBox>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Sheets}">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header = "" Binding = "{Binding Selected}"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding DrawingNumber}" />
+                <DataGridTextColumn Header="Title" Binding="{Binding DrawingTitle}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Height="25" Width="100" Margin="3" Command="{Binding PdfGenerate}">Export to PDF</Button>
+        </StackPanel>
     </StackPanel>
 </ui:HostedUserControl>
