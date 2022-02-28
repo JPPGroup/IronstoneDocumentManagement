@@ -6,9 +6,15 @@
     <AssemblyVersion>9.9.9.9</AssemblyVersion>
     <FileVersion>9.9.9.9</FileVersion>
     <UseWPF>true</UseWPF>
+	<LangVersion>9</LangVersion>
   </PropertyGroup>
   
   <Import Project="..\IronstoneBase\IronstoneObjectModelBaseUiProject.csproj" />
+  
+  <ItemGroup>
+    <None Remove="Resources\Check.png" />
+    <None Remove="Resources\Cross.png" />
+  </ItemGroup>
   
   <ItemGroup>
     <Reference Include="PresentationFramework" />
@@ -16,6 +22,11 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="WindowsBase" />
     <Reference Include="System.Xaml" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="Resources\Check.png" />
+    <Resource Include="Resources\Cross.png" />
   </ItemGroup>  
 
   <ItemGroup>

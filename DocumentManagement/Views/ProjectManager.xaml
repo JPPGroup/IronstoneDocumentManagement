@@ -4,11 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Jpp.Ironstone.DocumentManagement.Views"
-             xmlns:ui="clr-namespace:Jpp.Ironstone.Core.UI;assembly=IronstoneCoreUI"
+             xmlns:ui="clr-namespace:Jpp.Ironstone.Core.UI;assembly=IronstoneCoreUI"             
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <GroupBox Margin="10" Header="Project Settings" VerticalAlignment="Top">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Margin="10" Header="Project Settings" VerticalAlignment="Top" Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -27,15 +32,76 @@
                 <TextBox Text="{Binding Client}" Grid.Column="1" Grid.Row="2"/>
             </Grid>
         </GroupBox>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Sheets}">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Sheets}" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header = "" Binding = "{Binding Selected}"/>
                 <DataGridTextColumn Header="Number" Binding="{Binding DrawingNumber}" />
-                <DataGridTextColumn Header="Title" Binding="{Binding DrawingTitle}" />
+                <DataGridTextColumn Header="Title" Binding="{Binding DrawingTitle}" />                            
+                <DataGridTemplateColumn Header="Project No." Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="18" Height="18">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ProjectNumberDiffers}" Value="False">
+                                                <Setter Property="Source" Value="pack://application:,,,/IronstoneDocumentManagement;component/Resources/Check.png"/>
+                                        </DataTrigger>
+                                            <DataTrigger Binding="{Binding ProjectNumberDiffers}" Value="True">
+                                                <Setter Property="Source" Value="pack://application:,,,/IronstoneDocumentManagement;component/Resources/Cross.png"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                            </Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Project" Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="18" Height="18">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ProjectDiffers}" Value="False">
+                                                <Setter Property="Source" Value="pack://application:,,,/IronstoneDocumentManagement;component/Resources/Check.png"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ProjectDiffers}" Value="True">
+                                                <Setter Property="Source" Value="pack://application:,,,/IronstoneDocumentManagement;component/Resources/Cross.png"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Client" Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="18" Height="18">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ClientDiffers}" Value="False">
+                                                <Setter Property="Source" Value="pack://application:,,,/IronstoneDocumentManagement;component/Resources/Check.png"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ClientDiffers}" Value="True">
+                                                <Setter Property="Source" Value="pack://application:,,,/IronstoneDocumentManagement;component/Resources/Cross.png"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">
+            <Button Height="25" Width="100" Margin="3" Command="{Binding TitleCorrect}">Sync Titles</Button>
             <Button Height="25" Width="100" Margin="3" Command="{Binding PdfGenerate}">Export to PDF</Button>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </ui:HostedUserControl>
