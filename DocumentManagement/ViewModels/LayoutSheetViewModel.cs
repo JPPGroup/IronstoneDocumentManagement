@@ -39,6 +39,7 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
 
         private string _drawingTitle = "Unknown";
 
+        public string DocName { get; set; }
 
         public bool Selected { get; set; }
 

@@ -138,7 +138,8 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
                         Selected = false,
                         ClientDiffers = sheet.TitleBlock?.Client != _projectController.Client,
                         ProjectDiffers = sheet.TitleBlock?.Project != _projectController.ProjectName,
-                        ProjectNumberDiffers = sheet.TitleBlock?.ProjectNumber != _projectController.ProjectNumber
+                        ProjectNumberDiffers = sheet.TitleBlock?.ProjectNumber != _projectController.ProjectNumber,
+                        DocName = sheetController.DocName
                     };
 
                     Sheets.Add(vm);

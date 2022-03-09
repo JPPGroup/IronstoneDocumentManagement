@@ -167,9 +167,29 @@ namespace Jpp.Ironstone.DocumentManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap PDF_Small {
+            get {
+                object obj = ResourceManager.GetObject("PDF-Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Revise_Small {
             get {
                 object obj = ResourceManager.GetObject("Revise_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Sync_Small {
+            get {
+                object obj = ResourceManager.GetObject("Sync-Small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

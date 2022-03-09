@@ -36,7 +36,8 @@
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header = "" Binding = "{Binding Selected}"/>
                 <DataGridTextColumn Header="Number" Binding="{Binding DrawingNumber}" />
-                <DataGridTextColumn Header="Title" Binding="{Binding DrawingTitle}" />                            
+                <DataGridTextColumn Header="Title" Binding="{Binding DrawingTitle}" />
+                <DataGridTextColumn Header="Filename" Binding="{Binding DocName}" />
                 <DataGridTemplateColumn Header="Project No." Width="70">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
