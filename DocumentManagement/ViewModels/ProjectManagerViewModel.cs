@@ -63,8 +63,8 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
         }
 
         public ICommand PdfGenerate { get; }
-        public ICommand TitleCorrect { get; }        
-
+        public ICommand TitleCorrect { get; }
+        public ICommand CreateIssue { get; }
 
         public ObservableCollection<LayoutSheetViewModel> Sheets { get; set; }
 
@@ -87,7 +87,12 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
             TitleCorrect = new DelegateCommand(() =>
             {
                 UpdateTitles();
-            });            
+            });
+
+            CreateIssue = new DelegateCommand(() =>
+            {
+                CreateIssueCommand();
+            });
 
             try
             {
@@ -235,6 +240,45 @@ namespace Jpp.Ironstone.DocumentManagement.ViewModels
                 Application.SetSystemVariable("BACKGROUNDPLOT", bpValue);
                 _logger.LogTrace($"BACKGROUNDPLOT set to {Convert.ToInt32(Application.GetSystemVariable("BACKGROUNDPLOT"))}");
             }
+        }
+
+        private void CreateIssueCommand()
+        {
+            PlotToPdf();
+            IEnumerable<LayoutSheetController> dwgExport = GenerateDWGList();
+
+            foreach(LayoutSheetController layoutSheetController in dwgExport)
+            {
+                layoutSheetController.PrepareTransmit("C:\\test.dwg");
+            }
+        }
+
+        private IEnumerable<LayoutSheetController> GenerateDWGList()
+        {
+            //Strip out layouts?
+            IEnumerable<LayoutSheetViewModel> sheetsToPlot = Sheets.Where(s => s.Selected);
+            List<LayoutSheetController> drawingsToExport = new List<LayoutSheetController>();
+
+            foreach (LayoutSheetController sheetController in _projectController.SheetControllers.Values)
+            {
+                foreach (LayoutSheet sheet in sheetController.Sheets.Values)
+                {
+                    LayoutSheetViewModel sheets = sheetsToPlot.FirstOrDefault<LayoutSheetViewModel>(s => s.BackingSheet.LayoutID == sheet.LayoutID);
+                    if (sheets != null)
+                    {
+                        if (sheets.Selected)
+                        {
+                            if (!drawingsToExport.Contains(sheetController))
+                            {
+                                drawingsToExport.Add(sheetController);
+                                break;
+                            }
+                        }
+                    }                    
+                }
+            }
+                                    
+            return drawingsToExport;
         }
     }
 }

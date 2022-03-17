@@ -100,9 +100,10 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">            
             <Button Height="25" Width="100" Margin="3" Command="{Binding TitleCorrect}">Sync Titles</Button>
             <Button Height="25" Width="100" Margin="3" Command="{Binding PdfGenerate}">Export to PDF</Button>
+            <Button Height="25" Width="100" Margin="3" Command="{Binding CreateIssue}">Create Issue</Button>
         </StackPanel>
     </Grid>
 </ui:HostedUserControl>
