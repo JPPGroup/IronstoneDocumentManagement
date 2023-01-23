@@ -68,6 +68,7 @@ namespace Jpp.Ironstone.DocumentManagement
             revisionSplitButton.IsEnabled = false;
 
             column1.Items.Add(addSheet);
+            column1.Items.Add(new RibbonRowBreak());
             column1.Items.Add(revisionSplitButton);
             column1.Items.Add(new RibbonRowBreak());
             column1.Items.Add(UIHelper.CreateButton(Properties.Resources.ExtensionApplication_UI_ImportDrawing,
